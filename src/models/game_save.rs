@@ -30,6 +30,9 @@ impl GameSave {
 	// Save Index -> u32
 	const SAVEINDEX_OFFSET: usize = 0xFFC;
 
+	// Checksum -> u16
+	const CHECKSUM_OFFSET: usize = 0x1000;
+
 	pub fn default() -> GameSave {
 		GameSave {
 			trainer: Trainer::default(),
@@ -53,6 +56,9 @@ impl GameSave {
 			// Data
 			let data =
 				file_parser::get_block_buffer(&buffer, GameSave::DATA_OFFSET, GameSave::DATA_SIZE);
+
+			// Checksum
+			game_save.checksum = file_parser::get_u16_little_buffer(&b, GameSave::CHECKSUM_OFFSET);
 
 			// Parse data depending on id
 			if id == 0 {

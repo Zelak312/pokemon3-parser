@@ -1,7 +1,8 @@
 use crate::controllers::file_parser;
+use serde::{Deserialize, Serialize};
 use std::fmt;
 
-#[derive(Default, Clone)]
+#[derive(Default, Clone, Serialize, Deserialize)]
 pub struct TimePlayed {
     hours: u16,
     minutes: u8,

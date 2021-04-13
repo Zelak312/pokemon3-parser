@@ -1,9 +1,10 @@
 use super::game_save::GameSave;
 use crate::controllers::file_parser;
+use serde::{Deserialize, Serialize};
 use std::fmt;
 use std::fs::File;
 
-#[derive(Default)]
+#[derive(Default, Serialize, Deserialize)]
 pub struct FileSave {
     pub blocks: Vec<GameSave>,
     pub recent: Option<GameSave>,

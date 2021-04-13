@@ -1,6 +1,7 @@
 use crate::controllers::{cipher::Cipher, file_parser};
+use serde::{Deserialize, Serialize};
 
-#[derive(Default, Clone)]
+#[derive(Default, Clone, Serialize, Deserialize)]
 pub struct Inventory {
     pub team_size: u32,
     pub money: u32,

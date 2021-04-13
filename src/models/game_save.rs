@@ -1,9 +1,10 @@
 use super::inventory::Inventory;
 use super::trainer::Trainer;
 use crate::controllers::file_parser;
+use serde::{Deserialize, Serialize};
 use std::fmt;
 
-#[derive(Default, Clone)]
+#[derive(Default, Clone, Serialize, Deserialize)]
 pub struct GameSave {
     pub trainer: Trainer,
     pub inventory: Inventory,

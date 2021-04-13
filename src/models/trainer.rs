@@ -1,8 +1,9 @@
 use super::time_played::TimePlayed;
 use crate::controllers::file_parser;
+use serde::{Deserialize, Serialize};
 use std::fmt;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum TrainerGender {
     Male,
     Female,
@@ -31,7 +32,7 @@ impl Default for TrainerGender {
     }
 }
 
-#[derive(Default, Clone)]
+#[derive(Default, Clone, Serialize, Deserialize)]
 pub struct Trainer {
     pub id: u32,
     pub name: String,

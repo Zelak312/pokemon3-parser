@@ -42,7 +42,7 @@ pub struct Trainer {
 }
 
 impl Trainer {
-    // Id -> u32
+    // ID -> u32
     const ID_OFFSET: usize = 0xA;
 
     // Name -> string

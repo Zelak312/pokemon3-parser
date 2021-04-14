@@ -36,7 +36,7 @@ impl Default for TrainerGender {
 pub struct Trainer {
     pub id: u32,
     pub name: String,
-    pub gender: TrainerGender, // u8
+    pub gender: TrainerGender,
     pub time_played: TimePlayed,
     pub game_code: u32,
     pub security_key: u32,
